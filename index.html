@@ -105,17 +105,7 @@
             ctx.fill();
         }
 
-        function pulseHeart() {
-            if (heartGrowing) {
-                heartSize += 0.5;
-                if (heartSize >= 12) heartGrowing = false;
-            } else {
-                heartSize -= 0.5;
-                if (heartSize <= 10) heartGrowing = true;
-            }
-            drawHeart(150, 100, heartSize, "#ff4d6d");
-            requestAnimationFrame(pulseHeart);
-        }
+        
 
         function agree() {
             alert("❤️ 太棒了！那我们在一起吧～\n(っ˘з(˘⌣˘ ) ♡");
@@ -156,4 +146,5 @@
         pulseHeart();
     </script>
 </body>
+
 </html>
