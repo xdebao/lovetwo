@@ -89,9 +89,23 @@
         let okBtnWidth = 100; 
         let okBtnHeight = 50;
 
-      
+        function drawHeart(x, y, size, color) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.fillStyle = color;
+            for (let t = 0; t <= 360; t++) {
+                let t_rad = t * Math.PI / 180;
+                // 心形参数方程
+                let hx = x + size * (16 * Math.sin(t_rad) ** 3);
+                let hy = y - size * (13 * Math.cos(t_rad) - 5 * Math.cos(2 * t_rad) - 2 * Math.cos(3 * t_rad) - Math.cos(4 * t_rad));
+                if (t === 0) ctx.moveTo(hx, hy);
+                else ctx.lineTo(hx, hy);
+            }
+            ctx.closePath();
+            ctx.fill();
+        }
 
-        
+      
 
         function agree() {
             alert("❤️ 太棒了！那我们在一起吧～\n(っ˘з(˘⌣˘ ) ♡");
@@ -132,6 +146,4 @@
         pulseHeart();
     </script>
 </body>
-
 </html>
-
